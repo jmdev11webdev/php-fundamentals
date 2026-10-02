@@ -149,3 +149,66 @@ foreach($users as $user) {
     */
 }
 ?>
+
+<?php 
+// another foreach loop but with continue 
+$users2 = [
+    [
+        'name'=>'Matthew', 'with honors'=>true
+    ],
+    [
+        'name'=>'Mark', 'with honors'=>false
+    ],
+    [
+        'name'=>'Luke', 'with honors'=>true
+    ]
+];
+
+foreach ($users2 as $user2) {
+    // continue loop with negation
+    if (!$user2['with honors']) {
+        continue;
+    } 
+    var_dump('Give Certificate to' . ' ' . $user2['name']);
+    /* you can also control with the current loop or not, by continuing you can use continue; but 
+    in this example, it continues with those who are with honors since the syntax identifies
+    with a negation that is not users and remove them.
+    */
+}
+?>
+
+<?php
+// another foreach loop but with break 
+$users3 = [
+    [
+        'name'=>'Matthew', 'with honors'=>true
+    ],
+    [
+        'name'=>'Mark', 'with honors'=>false
+    ],
+    [
+        'name'=>'Luke', 'with honors'=>true
+    ]
+];
+
+foreach ($users3 as $user3) {
+    // break loop with negation
+    if (!$user3['with honors']) {
+        break;
+    } 
+    var_dump('Give Certificate to' . ' ' . $user3['name']);
+    /* with using break, the loop breaks if after a true associative array object is false. 
+    by using this, it is for you to control your loop.
+    */
+}
+?>
+
+<?php
+// last loop example
+$numbers1 = [1, 2, 3, 4, 5];
+$doubled = [];
+
+foreach($numbers1 as $numbers) {
+    $doubled[]=$numbers*2;
+}
+?>
